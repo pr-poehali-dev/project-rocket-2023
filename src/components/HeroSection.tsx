@@ -68,7 +68,7 @@ export default function HeroSection() {
         ))}
       </div>
 
-      <div className="absolute bottom-8 right-8 z-20">
+      <div className="absolute bottom-4 right-4 z-20 sm:bottom-8 sm:right-8">
         <div
           className={cn(
             'rounded-sm bg-black/50 px-4 py-2 backdrop-blur-sm transition-all duration-700',
@@ -83,8 +83,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
 
       <div className="relative z-10 flex h-full items-center">
-        <div className="container mx-auto px-8 md:px-16">
-          <div className="flex max-w-2xl flex-col gap-10">
+        <div className="container mx-auto px-5 md:px-16">
+          <div className="flex max-w-2xl flex-col gap-6 md:gap-10">
             {/* Portrait */}
             <div
               className={cn(
@@ -92,7 +92,7 @@ export default function HeroSection() {
                 isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               )}
             >
-              <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white/80 shadow-2xl md:h-56 md:w-56">
+              <div className="relative h-28 w-28 overflow-hidden rounded-full border-4 border-white/80 shadow-2xl sm:h-36 sm:w-36 md:h-56 md:w-56">
                 <img
                   src="https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/bucket/1055be7d-8e2e-4c5c-87f5-d0205c3458f4.png"
                   alt="Александр Зайнетдинов"
@@ -112,13 +112,13 @@ export default function HeroSection() {
                 <p className="text-sm font-medium uppercase tracking-widest text-white/50">
                   Портфолио
                 </p>
-                <p className="text-3xl font-light text-white md:text-4xl lg:text-5xl">
+                <p className="text-2xl font-light text-white sm:text-3xl md:text-4xl lg:text-5xl">
                   Александр Зайнетдинов
                 </p>
-                <p className="text-xl font-light text-white/80 md:text-2xl">
+                <p className="text-base font-light text-white/80 sm:text-xl md:text-2xl">
                   HR-директор · Эксперт по управлению персоналом
                 </p>
-                <p className="max-w-lg text-base text-white/60 leading-relaxed pt-1">
+                <p className="max-w-lg text-sm text-white/60 leading-relaxed pt-1 sm:text-base">
                   26 лет в HR, из которых 13 — в системообразующих холдингах АВТОБАН и Концерн КРОСТ. Строю HR-системы с нуля, формирую команды, которые достигают результата.
                 </p>
               </div>
@@ -131,10 +131,10 @@ export default function HeroSection() {
                 isLoaded ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
               )}
             >
-              <div className="flex gap-8">
+              <div className="flex flex-wrap gap-5 sm:gap-8">
                 {stats.map((stat) => (
                   <div key={stat.label} className="flex flex-col gap-1">
-                    <span className="text-2xl font-semibold text-white">{stat.value}</span>
+                    <span className="text-xl font-semibold text-white sm:text-2xl">{stat.value}</span>
                     <span className="text-xs text-white/50 uppercase tracking-wide">{stat.label}</span>
                   </div>
                 ))}

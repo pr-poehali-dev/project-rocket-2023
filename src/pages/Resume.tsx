@@ -196,15 +196,15 @@ export default function Resume() {
 
         {/* Header */}
         <div className="border-b-2 border-gray-900 pb-6 mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Зайнетдинов Александр Зарифович</h1>
-          <p className="text-lg text-gray-600 mt-1">Директор по управлению персоналом (HRD)</p>
-          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-gray-600">
+          <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">Зайнетдинов Александр Зарифович</h1>
+          <p className="text-base text-gray-600 mt-1 sm:text-lg">Директор по управлению персоналом (HRD)</p>
+          <div className="mt-3 flex flex-col gap-1 text-sm text-gray-600 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-1">
             <span className="flex items-center gap-1"><Icon name="Phone" size={14} />+7 (985) 768-07-73</span>
             <span className="flex items-center gap-1"><Icon name="Mail" size={14} />zzarif@yandex.ru</span>
             <span className="flex items-center gap-1"><Icon name="MapPin" size={14} />Москва, м. Бабушкинская</span>
             <span className="flex items-center gap-1"><Icon name="Briefcase" size={14} />Полная занятость, на месте работодателя</span>
           </div>
-          <div className="mt-3 flex gap-6 text-sm">
+          <div className="mt-3 flex flex-col gap-1 text-sm sm:flex-row sm:gap-6">
             <span className="font-semibold text-gray-900">Желаемая зарплата: <span className="text-gray-700">450 000 ₽ на руки</span></span>
             <span className="font-semibold text-gray-900">Опыт: <span className="text-gray-700">27 лет</span></span>
           </div>
@@ -228,7 +228,7 @@ export default function Resume() {
           <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-5">Опыт работы</h2>
           <div className="space-y-7">
             {experience.map((job, i) => (
-              <div key={i} className="grid grid-cols-[180px_1fr] gap-4 print:grid-cols-[160px_1fr]">
+              <div key={i} className="grid grid-cols-1 gap-1 sm:grid-cols-[180px_1fr] sm:gap-4 print:grid-cols-[160px_1fr]">
                 <div className="text-xs text-gray-500 pt-0.5 leading-relaxed">
                   <div className="font-medium text-gray-700">{job.period}</div>
                   <div>{job.duration}</div>
@@ -263,7 +263,7 @@ export default function Resume() {
         {/* Education */}
         <section className="mb-8">
           <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-4">Образование</h2>
-          <div className="grid grid-cols-[180px_1fr] gap-4">
+          <div className="grid grid-cols-1 gap-1 sm:grid-cols-[180px_1fr] sm:gap-4">
             <div className="text-xs text-gray-500">2005</div>
             <div>
               <div className="font-semibold text-gray-900">Кубанский государственный университет</div>
@@ -294,7 +294,7 @@ export default function Resume() {
         </section>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 pt-4 text-xs text-gray-400 flex justify-between">
+        <div className="border-t border-gray-200 pt-4 text-xs text-gray-400 flex flex-col gap-1 sm:flex-row sm:justify-between">
           <span>Рекомендации представлю по запросу</span>
           <span>Обновлено 24 апреля 2026</span>
         </div>
