@@ -9,9 +9,9 @@ const images = [
 ];
 
 const stats = [
-  { value: '500+', label: 'закрытых вакансий' },
-  { value: '8 лет', label: 'опыта в HR' },
-  { value: '97%', label: 'успешных наймов' },
+  { value: '26 лет', label: 'опыта в HR' },
+  { value: '25 000+', label: 'сотрудников под управлением' },
+  { value: '13 лет', label: 'в крупнейших холдингах' },
 ];
 
 export default function HeroSection() {
@@ -80,13 +80,13 @@ export default function HeroSection() {
                   Портфолио
                 </p>
                 <p className="text-3xl font-light text-white md:text-4xl lg:text-5xl">
-                  Анна Смирнова
+                  Александр Зайнетдинов
                 </p>
                 <p className="text-xl font-light text-white/80 md:text-2xl">
-                  HR-менеджер · Рекрутер · Карьерный консультант
+                  HR-директор · Эксперт по управлению персоналом
                 </p>
                 <p className="max-w-lg text-base text-white/60 leading-relaxed pt-1">
-                  Помогаю компаниям находить таланты, а специалистам — находить своё место. Строю команды, которые двигают бизнес вперёд.
+                  26 лет в HR, из которых 13 — в системообразующих холдингах АВТОБАН и Концерн КРОСТ. Строю HR-системы с нуля, формирую команды, которые достигают результата.
                 </p>
               </div>
             </div>
