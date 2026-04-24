@@ -157,7 +157,9 @@ export default function HeroSection() {
                     Связаться со мной
                   </button>
                   <a
-                    href="#"
+                    href="/resume"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-none border border-white/40 px-6 py-3 text-sm font-medium text-white transition-all hover:border-white"
                   >
                     Скачать резюме
