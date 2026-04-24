@@ -60,8 +60,8 @@ export default function HeroSection() {
             >
               <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-white/80 shadow-2xl md:h-56 md:w-56">
                 <img
-                  src="https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/33afc58d-3383-4525-9aa0-c38da55ac3e8.jpg"
-                  alt="HR-менеджер"
+                  src="https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/bucket/1055be7d-8e2e-4c5c-87f5-d0205c3458f4.png"
+                  alt="Александр Зайнетдинов"
                   className="h-full w-full object-cover"
                 />
               </div>
