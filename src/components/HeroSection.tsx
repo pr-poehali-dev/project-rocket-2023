@@ -20,11 +20,22 @@ export default function HeroSection() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: '', phone: '', message: '' });
+    setLoading(true);
+    try {
+      await fetch('https://functions.poehali.dev/26e47e65-93bc-4f6c-9f29-9e3b535b7a1f', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      setSent(true);
+      setForm({ name: '', phone: '', message: '' });
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -253,9 +264,10 @@ export default function HeroSection() {
               </div>
               <button
                 type="submit"
-                className="mt-2 border border-foreground bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-transparent hover:text-foreground"
+                disabled={loading}
+                className="mt-2 border border-foreground bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-transparent hover:text-foreground disabled:opacity-50"
               >
-                Отправить
+                {loading ? 'Отправка...' : 'Отправить'}
               </button>
             </form>
           )}
