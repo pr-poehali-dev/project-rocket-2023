@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const images = [
-  'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/2dca0600-2ccf-4191-9374-dcf85d1e85be.jpg',
-  'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/6c67d32a-e07a-4428-9367-b344c2d79cbf.jpg',
-  'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/29ad4b29-8948-4bfb-bfab-18c229011f83.jpg',
+  { src: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/2dca0600-2ccf-4191-9374-dcf85d1e85be.jpg', caption: 'ЦКАД-3' },
+  { src: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/6c67d32a-e07a-4428-9367-b344c2d79cbf.jpg', caption: 'Бизнес-парк Руднево' },
+  { src: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/29ad4b29-8948-4bfb-bfab-18c229011f83.jpg', caption: 'Строительная бригада' },
 ];
 
 const stats = [
@@ -29,21 +29,33 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
       <div className="absolute inset-0">
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div
-            key={src}
+            key={image.src}
             className={cn(
               'absolute inset-0 transition-opacity duration-1000 ease-in-out',
               currentIndex === index ? 'opacity-100' : 'opacity-0'
             )}
           >
             <img
-              src={src}
-              alt=""
+              src={image.src}
+              alt={image.caption}
               className="h-full w-full object-cover"
             />
           </div>
         ))}
+      </div>
+
+      <div className="absolute bottom-8 right-8 z-20">
+        <div
+          className={cn(
+            'rounded-sm bg-black/50 px-4 py-2 backdrop-blur-sm transition-all duration-700',
+          )}
+        >
+          <p className="text-sm font-medium uppercase tracking-widest text-white/80">
+            {images[currentIndex].caption}
+          </p>
+        </div>
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
