@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 const images = [
   { src: 'https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-04/post_SSS_uchastok_TsKaD_Denisov%2814%29.jpg?itok=50b1ZW-G', caption: 'ЦКАД-3' },
@@ -16,6 +17,15 @@ const stats = [
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [form, setForm] = useState({ name: '', phone: '', message: '' });
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSent(true);
+    setForm({ name: '', phone: '', message: '' });
+  }
 
   useEffect(() => {
     setIsLoaded(true);
@@ -27,6 +37,7 @@ export default function HeroSection() {
   }, []);
 
   return (
+    <>
     <section className="relative h-screen w-full overflow-hidden bg-black">
       <div className="absolute inset-0">
         {images.map((image, index) => (
@@ -128,12 +139,12 @@ export default function HeroSection() {
             >
               <div className="flex flex-col gap-5">
                 <div className="flex flex-wrap gap-3">
-                  <a
-                    href="mailto:anna@example.com"
+                  <button
+                    onClick={() => { setDialogOpen(true); setSent(false); }}
                     className="inline-flex items-center gap-2 rounded-none border border-white bg-white px-6 py-3 text-sm font-medium text-black transition-all hover:bg-transparent hover:text-white"
                   >
                     Связаться со мной
-                  </a>
+                  </button>
                   <a
                     href="#"
                     className="inline-flex items-center gap-2 rounded-none border border-white/40 px-6 py-3 text-sm font-medium text-white transition-all hover:border-white"
@@ -197,5 +208,59 @@ export default function HeroSection() {
         ))}
       </div>
     </section>
+
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent className="sm:max-w-md rounded-none">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-light">Связаться со мной</DialogTitle>
+          </DialogHeader>
+          {sent ? (
+            <div className="py-8 text-center space-y-2">
+              <p className="text-lg font-medium">Спасибо!</p>
+              <p className="text-sm text-muted-foreground">Ваше сообщение отправлено. Я свяжусь с вами в ближайшее время.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 pt-2">
+              <div className="flex flex-col gap-1">
+                <label className="text-sm text-muted-foreground">Имя *</label>
+                <input
+                  required
+                  value={form.name}
+                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                  placeholder="Иван Иванов"
+                  className="border border-input bg-background px-3 py-2 text-sm outline-none focus:border-foreground transition-colors"
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="text-sm text-muted-foreground">Телефон *</label>
+                <input
+                  required
+                  value={form.phone}
+                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                  placeholder="+7 (___) ___-__-__"
+                  className="border border-input bg-background px-3 py-2 text-sm outline-none focus:border-foreground transition-colors"
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="text-sm text-muted-foreground">Сообщение</label>
+                <textarea
+                  rows={4}
+                  value={form.message}
+                  onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                  placeholder="Ваш вопрос или предложение..."
+                  className="border border-input bg-background px-3 py-2 text-sm outline-none focus:border-foreground transition-colors resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="mt-2 border border-foreground bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-transparent hover:text-foreground"
+              >
+                Отправить
+              </button>
+            </form>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
