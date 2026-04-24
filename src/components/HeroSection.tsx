@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const images = [
-  { src: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/2dca0600-2ccf-4191-9374-dcf85d1e85be.jpg', caption: 'ЦКАД-3' },
+  { src: 'https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-04/post_SSS_uchastok_TsKaD_Denisov%2814%29.jpg?itok=50b1ZW-G', caption: 'ЦКАД-3' },
   { src: 'https://storage.yandexcloud.net/krost-media/CACHE/press/press/preview/944e664af4cb461d6a6d284ec96ecf4d88ba21fc/8b752f968086c6d13b712f210834b2ed.jpg', caption: 'Верфь электросудов · Нагатинский Затон' },
   { src: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/29ad4b29-8948-4bfb-bfab-18c229011f83.jpg', caption: 'Строительная бригада' },
 ];
