@@ -4,6 +4,11 @@ import Icon from '@/components/ui/icon';
 
 const slides = [
   {
+    url: 'https://cdn.poehali.dev/files/aec080db-b1bc-467a-aa97-984036c0a3cc.png',
+    title: 'Содержание',
+    description: 'Профиль сотрудника: 4 блока оценки — от компетенций до лояльности',
+  },
+  {
     url: 'https://cdn.poehali.dev/files/3845ef5f-c36c-421e-9113-f797f888c072.png',
     title: 'Итоговая школа оценки сотрудника',
     description: 'Сводная карточка с рейтингом и рекомендациями по сотруднику',
