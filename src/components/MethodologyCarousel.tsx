@@ -4,21 +4,6 @@ import Icon from '@/components/ui/icon';
 
 const slides = [
   {
-    url: 'https://cdn.poehali.dev/files/0c97de48-2952-4a8e-a1f0-ea088aa28ce6.png',
-    title: 'Блок 1 — Оценка руководителем',
-    description: 'Шкала оценки деятельности подчинённого по 7 критериям',
-  },
-  {
-    url: 'https://cdn.poehali.dev/files/e5404134-9c92-401d-bb23-30066103cde1.png',
-    title: 'Блок 2 — Профессиональные компетенции',
-    description: 'Тестирование по профессии: от 30 до 70 вопросов',
-  },
-  {
-    url: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/bucket/327804b0-2178-4752-a1d2-aae7d1620ee8.png',
-    title: 'Блок 3 — Охрана труда и безопасность',
-    description: 'Знание норм охраны труда, техники и пожарной безопасности',
-  },
-  {
     url: 'https://cdn.poehali.dev/files/3845ef5f-c36c-421e-9113-f797f888c072.png',
     title: 'Итоговая школа оценки сотрудника',
     description: 'Сводная карточка с рейтингом и рекомендациями по сотруднику',
