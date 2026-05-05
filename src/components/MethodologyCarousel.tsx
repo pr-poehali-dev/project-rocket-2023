@@ -18,11 +18,7 @@ const slides = [
     title: 'Вопросы по профессии',
     description: 'Адаптированные тесты под каждую специальность',
   },
-  {
-    url: 'https://cdn.poehali.dev/files/3845ef5f-c36c-421e-9113-f797f888c072.png',
-    title: 'Итог: управленческие решения',
-    description: 'Готовые выводы: ключевой сотрудник, риск выгорания, развитие',
-  },
+
 ];
 
 export default function MethodologyCarousel() {
