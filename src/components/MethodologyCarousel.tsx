@@ -19,9 +19,9 @@ const slides = [
     description: 'Адаптированные тесты под каждую специальность',
   },
   {
-    url: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/bucket/327804b0-2178-4752-a1d2-aae7d1620ee8.png',
-    title: '',
-    description: '',
+    url: 'https://cdn.poehali.dev/files/ec09389f-9678-418f-b88a-ba45e30dd4a4.png',
+    title: 'Матрица потенциала сотрудников',
+    description: '16 профилей сотрудников по профессиональным компетенциям и лояльности',
   },
 ];
 
