@@ -64,7 +64,7 @@ export default function MethodologyCarousel() {
             <img
               src={slides[current].url}
               alt={slides[current].title}
-              className="w-full object-contain max-h-[55vh] md:max-h-[65vh]"
+              className="w-full object-contain max-h-[70vh] md:max-h-[85vh]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
