@@ -55,7 +55,7 @@ export default function Projects() {
       <div className="mx-auto max-w-3xl px-5 py-10">
         <h1 className="mb-2 text-3xl font-light">Ключевые проекты</h1>
         <p className="mb-10 text-sm text-white/50">
-          Реализованные HR-проекты в крупнейших российских компаниях
+          Проекты компаний реализованные с моим участием
         </p>
 
         <div className="flex flex-col gap-8">
