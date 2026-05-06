@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
+import MethodologyCarousel from '@/components/MethodologyCarousel';
 
 const projects = [
   {
@@ -10,6 +11,7 @@ const projects = [
     description: '',
     results: ['Нанято 193 высококвалифицированных специалиста через массовый подбор с роботами', 'Оптимизация социального пакета на 150 млн руб./год без потери эффективности', 'Проект Hi-Po: 80% вакансий руководителей закрываются кадровыми резервистами'],
     image: 'https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2023-04/post_SSS_uchastok_TsKaD_Denisov%2814%29.jpg?itok=50b1ZW-G',
+    carousel: false,
   },
   {
     id: 2,
@@ -19,16 +21,17 @@ const projects = [
     description: '',
     results: ['90% заявок уровня СЕО-1, СЕО-2, СЕО-3 закрыты внутренними силами', '70% подобранных кандидатов успешно прошли программы адаптации', 'Текучесть молодых специалистов не превышает 5% — запущено новое направление работы с МС', 'На 20% ниже текучесть кандидатов, отобранных новым отделом найма', 'Сформирован эффективный отдел найма персонала'],
     image: 'https://storage.yandexcloud.net/krost-media/CACHE/press/press/preview/944e664af4cb461d6a6d284ec96ecf4d88ba21fc/8b752f968086c6d13b712f210834b2ed.jpg',
+    carousel: false,
   },
   {
     id: 3,
     title: 'Проект комплексной оценки рабочих и ИТР',
     period: '2024–2025',
     role: '',
-    description:
-      'Комплексный аудит HR-процессов производственного предприятия. Разработка и внедрение новой модели управления персоналом.',
-    results: ['Аудит 12 HR-процессов', 'Снижение затрат на найм на 28%', 'Внедрена система KPI'],
+    description: '',
+    results: [],
     image: 'https://cdn.poehali.dev/projects/8534e1dd-101b-4ec5-bdd1-84d05c166688/files/29ad4b29-8948-4bfb-bfab-18c229011f83.jpg',
+    carousel: true,
   },
 ];
 
@@ -73,26 +76,32 @@ export default function Projects() {
                 <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
                   <div>
                     <h2 className="text-lg font-medium">{project.title}</h2>
-                    <p className="text-sm text-white/50">{project.role}</p>
+                    {project.role && <p className="text-sm text-white/50">{project.role}</p>}
                   </div>
                   <span className="text-xs text-white/40 border border-white/20 px-2 py-1">
                     {project.period}
                   </span>
                 </div>
 
-                <p className="mb-4 text-sm leading-relaxed text-white/70">{project.description}</p>
+                {project.description && (
+                  <p className="mb-4 text-sm leading-relaxed text-white/70">{project.description}</p>
+                )}
 
-                <div className="flex flex-wrap gap-2">
-                  {project.results.map((r) => (
-                    <span
-                      key={r}
-                      className="flex items-center gap-1.5 text-xs text-white/60"
-                    >
-                      <Icon name="CheckCircle" size={12} className="text-white/40" />
-                      {r}
-                    </span>
-                  ))}
-                </div>
+                {project.carousel ? (
+                  <MethodologyCarousel />
+                ) : (
+                  <div className="flex flex-wrap gap-2">
+                    {project.results.map((r) => (
+                      <span
+                        key={r}
+                        className="flex items-center gap-1.5 text-xs text-white/60"
+                      >
+                        <Icon name="CheckCircle" size={12} className="text-white/40" />
+                        {r}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}
